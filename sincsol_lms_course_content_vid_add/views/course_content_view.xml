@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View for Course Content -->
+    <record id="view_course_content_tree" model="ir.ui.view">
+        <field name="name">ustadam.course_content.tree</field>
+        <field name="model">ustadam.course_content</field>
+        <field name="arch" type="xml">
+            <tree string="Course Content">
+                <field name="text"/>
+                <field name="youtube_url"/>
+                <field name="course_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Course Content -->
+    <record id="view_course_content_form" model="ir.ui.view">
+        <field name="name">ustadam.course_content.form</field>
+        <field name="model">ustadam.course_content</field>
+        <field name="arch" type="xml">
+            <form string="Course Content">
+                <sheet>
+                    <group>
+                        <field name="text"/>
+                        <field name="youtube_url"/>
+                        <field name="course_id"/>
+                    </group>
+                    <group>
+                        <iframe src="https://www.youtube.com/embed/[[ youtube_url ]]" width="560" height="315" frameborder="0" allowfullscreen="true"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Course Content -->
+    <record id="action_course_content" model="ir.actions.act_window">
+        <field name="name">Course Content</field>
+        <field name="res_model">ustadam.course_content</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new course content.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item for Course Content -->
+    <menuitem id="menu_course_content_root" name="Course Contents" sequence="30"/>
+    <menuitem id="menu_course_content" name="Manage Course Content" parent="menu_course_content_root" action="action_course_content" sequence="10"/>
+</odoo>

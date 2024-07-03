@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sincsol_lms_course_content_vid_add_sincsol_lms_course_content_vid_add,sincsol_lms_course_content_vid_add.sincsol_lms_course_content_vid_add,model_sincsol_lms_course_content_vid_add_sincsol_lms_course_content_vid_add,base.group_user,1,1,1,1
